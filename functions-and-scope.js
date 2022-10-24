@@ -84,13 +84,30 @@ console.log(gemiddeldEindCijfer);
 // averageGrade([6, 4, 5]) geeft xxxx
 // averageGrade([8, 9, 4, 6, 10]) geeft xxxx
 
+/*//bereken het totaal van de array
+let sum = grades.reduce(function (a, b) {return a + b;} ,0);
+console.log(sum);
+//bereken het aantal cijfers in de array
+console.log(grades.length);
+//deel het totaal door het aantal cijfers
+console.log("Het gemiddelde eindcijfer is: " + (sum/grades.length))*/
+
+function averageGrade (a, b){
+    let sum = grades.reduce(function (a, b) {return a + b;} ,0);
+    console.log("Het gemiddelde eindcijfer is: " + (sum/grades.length))
+}
+
+//werkt alleen voor grades, nog niet gelukt een algemene functie, die voor andere arrays te schrijven
+console.log(averageGrade([6, 4, 5],));
+
 
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
+let afgerondCijfer = gemiddeldEindCijfer.toFixed(2)
 
-
+console.log(afgerondCijfer);
 
 /* Bonusopdracht: hoogste cijfer */
 
@@ -103,6 +120,19 @@ console.log(gemiddeldEindCijfer);
 
 // ---- Verwachte uitkomst: 9
 
+const largestNumber = (number) => {
+    let highestGrade = 0;
+
+    for (let i = 0; i < grades.length; i++) {
+        if (number[i] > highestGrade) {
+            highestGrade = number[i];
+        }
+    }
+    return highestGrade;
+}
+
+console.log(largestNumber(grades));
+//methode die deze functie in een keer uitvoert is Math.max: console.log(Math.max(...grades));
 
 /* 3b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd highestGrade, die een array van cijfers verwacht (zoals grades) en het hoogste cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 3a.
@@ -113,3 +143,5 @@ console.log(gemiddeldEindCijfer);
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+// niet aan toe gekomen
