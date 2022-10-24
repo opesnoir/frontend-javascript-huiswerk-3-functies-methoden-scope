@@ -36,7 +36,19 @@ console.log(counter);
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
+function cumLaude(numbers) {
+    let counter2 = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] >= 8) {
+            counter2 += 1
+        }
+    }
+    return counter2;
+}
 
+console.log(cumLaude(grades));
+console.log(cumLaude([6, 4, 5]));
+console.log(cumLaude([8, 9, 4, 6, 10]));
 
 
 /* Opdracht  2: Gemiddeld cijfer */
@@ -51,6 +63,16 @@ console.log(counter);
 
 // ---- Verwachte uitkomst: 6.642857142857143
 
+let sumArray = grades.reduce(function (passedIn, item) {
+    return passedIn + item;
+}, 0);
+console.log(sumArray);
+
+let totalArray = grades.length;
+console.log(totalArray);
+
+let gemiddeldEindCijfer = sumArray / totalArray;
+console.log(gemiddeldEindCijfer);
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
