@@ -165,4 +165,19 @@ console.log(largestNumber(grades));
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
 
-// niet aan toe gekomen
+
+const highestGrade = (cijfers) => {
+    let highestGrade = 0;
+
+    for (let i = 0; i < cijfers.length; i++) {
+        if (cijfers[i] > highestGrade) {
+            highestGrade = cijfers[i];
+        }
+    }
+    console.log("highest grade is " + highestGrade)
+    return highestGrade;
+}
+
+highestGrade(grades);
+highestGrade([6, 4, 5]);
+highestGrade([8, 9, 4, 6, 10]);
