@@ -92,22 +92,43 @@ console.log(grades.length);
 //deel het totaal door het aantal cijfers
 console.log("Het gemiddelde eindcijfer is: " + (sum/grades.length))*/
 
-function averageGrade (a, b){
-    let sum = grades.reduce(function (a, b) {return a + b;} ,0);
-    console.log("Het gemiddelde eindcijfer is: " + (sum/grades.length))
+function averageGrade(cijfers) {
+
+    let sumGrades = cijfers.reduce(function (passedIn, item) {
+        return passedIn + item;
+    }, 0);
+    let arrayItems = cijfers.length
+    let average = (sumGrades / arrayItems);
+    console.log("The average grade is: " + average)
+    return average;
 }
 
-//werkt alleen voor grades, nog niet gelukt een algemene functie, die voor andere arrays te schrijven
-console.log(averageGrade([6, 4, 5],));
+//console.log(averageGrade([8, 9, 4, 6, 10]));
+averageGrade(grades);
+averageGrade([6, 4, 5]);
+averageGrade([8, 9, 4, 6, 10]);
+
 
 
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
-let afgerondCijfer = gemiddeldEindCijfer.toFixed(2)
+function averageGrade2(cijfers) {
 
-console.log(afgerondCijfer);
+    let sumGrades = cijfers.reduce(function (passedIn, item) {
+        return passedIn + item;
+    }, 0);
+    let arrayItems = cijfers.length
+    let average = (sumGrades / arrayItems);
+    console.log("The average grade is: " + average.toFixed(2))
+    return average;
+}
+
+averageGrade2(grades);
+averageGrade2([6, 4, 5]);
+averageGrade2([8, 9, 4, 6, 10]);
+
 
 /* Bonusopdracht: hoogste cijfer */
 
